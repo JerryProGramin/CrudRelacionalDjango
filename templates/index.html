@@ -1,26 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud</title>
-
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+    <style>
+        body {
+            background-color: #46494b;
+            font-family: Arial, sans-serif;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .btn-custom {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        h1 {
+            color: #e2d9d9;
+        }
+
+        h2 {
+            color: #cec7c7;
+        }
+
+        .lead {
+            color:#cec7c7;
+        }
+
+        .card-title{
+            color:#46494b;
+        }
+    </style>
 </head>
+
 <body>
-    <body class="d-flex align-items-center justify-content-center" style="height: 50vh; text-align: center;">
-    <div class="container mt-5">
-        <h1 class="text-center">Inicio</h1>
+    <div class="content-container">
+        <h1>Bienvenido al Panel de Administración</h1>
+        <p class="lead">Seleccione una opción para gestionar el CRUD de las categorías, proveedores y productos.</p>
 
-        <h2 class="mt-4">Crud Categoria</h2>
-        <a href="{% url 'crud_categoria' %}" class="btn btn-primary">Click aquí</a>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Crud Categoria</h2>
+                <a href="{% url 'crud_categoria' %}" class="btn btn-primary btn-custom">Acceder</a>
+            </div>
+        </div>
 
-        <h2 class="mt-4">Crud Proveedor</h2>
-        <a href="{% url 'crud_proveedor' %}" class="btn btn-primary">Click aquí</a>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Crud Proveedor</h2>
+                <a href="{% url 'crud_proveedor' %}" class="btn btn-primary btn-custom">Acceder</a>
+            </div>
+        </div>
 
-        <h2 class="mt-4">Crud Producto</h2>
-        <a href="{% url 'crud_producto' %}" class="btn btn-primary">Click aquí</a>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Crud Producto</h2>
+                <a href="{% url 'crud_producto' %}" class="btn btn-primary btn-custom">Acceder</a>
+            </div>
+        </div>
 
     </div>
 
@@ -28,4 +109,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

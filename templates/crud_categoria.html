@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de Categorias</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Sistema de Gestión de Categorias</h1>
 
         <div class="d-flex justify-content-between align-items-center mt-4">
-            <a href="{% url 'crear_categoria' %}" class="btn btn-primary">Registrar Categoria</a>
-            <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
+            <a href="{% url 'crear_categoria' %}" class="btn btn-primary"><i class="fa-regular fa-square-plus"></i> Registrar Categoria</a>
+            <a href="{% url 'home' %}" class="btn btn-secondary"><i class="fa-solid fa-rotate-left"></i> Volver</a>
         </div>
 
         <h1 class="mt-5">Lista de Categorias</h1>
@@ -31,8 +32,8 @@
                         <td>{{ categoria.nombre }}</td>
                         <td>{{ categoria.descripcion }}</td>
                         <td>
-                            <a href="{% url 'editar_categoria' categoria.id %}" class="btn btn-warning btn-sm">Actualizar</a>
-                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ categoria.id }}">Eliminar</button>
+                            <a href="{% url 'editar_categoria' categoria.id %}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
+                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ categoria.id }}"><i class="fa-solid fa-trash-can"></i> Eliminar</button>
 
                             <!-- Modal -->
                             <div class="modal fade" id="confirmDelete{{ categoria.id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">

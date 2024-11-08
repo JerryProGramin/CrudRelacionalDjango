@@ -5,20 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Proveedor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Centrar el formulario */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Estilo de los campos del formulario */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+
+        /* Estilo de las etiquetas */
+        .form-group label {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Contenedor de botones */
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Estilo de los botones */
+        .btn-container button,
+        .btn-container a {
+            width: 48%;
+            font-size: 1rem;
+        }
+
+        .btn i {
+            margin-right: 5px;
+        }
+
+        /* Estilo del título */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Editar Proveedor: {{ proveedor.nombre }}</h1>
-        <form method="POST" class="mt-4 text-center">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
-            <div>
-                <button type="submit" class="btn btn-warning">Actualizar</button>
-                <a href="{% url 'crud_proveedor' %}" class="btn btn-secondary">Volver</a>
-            </div>
-        </form>
+        <div class="form-container">
+            <h1 class="text-center mb-4">Editar Proveedor: {{ proveedor.nombre }}</h1>
+
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+
+                <div class="btn-container">
+                    <!-- Botón Actualizar -->
+                    <button type="submit" class="btn btn-warning">
+                        <i class="fa-regular fa-circle-check"></i> Actualizar
+                    </button>
+                    <!-- Botón Volver -->
+                    <a href="{% url 'crud_proveedor' %}" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate-left"></i> Volver
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
